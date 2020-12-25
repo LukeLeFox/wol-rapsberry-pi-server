@@ -11,7 +11,7 @@ Operazioni preliminari:
 5) Tag NFC 
 
 
-INIZIAMO:
+# INIZIAMO:
 
 Accediamo al nostro server (nel mio caso una Raspberry pi) 
 Creiamo una cartella comoda per lavorare, io ho usato   mkdir /home/pi/wol
@@ -20,16 +20,18 @@ Creiamo il file che conterrà lo script    touch wol.py
 Usiamo un qualsiasi editor di testo per aprirlo (uso mousepad visot che è preinstallato)    mousepad wol.py
 Incolliamo il seguente script in python:
 
-# Load libraries
+# SCRIPT
+
+#Load libraries
 from bottle import route, run, template
 from wakeonlan import send_magic_packet
 
-# Handle http requests to the root address
+#Handle http requests to the root address
 @route('/')
 def index():
  return 'Allontanati, ti attende solo la rovina.'
-
-# Handle http requests to /subdir
+ 
+#Handle http requests to /subdir
 @route('/wakeitup/')
 def wol():
  #Inserire il proprio mac address nel formato indicato
@@ -39,6 +41,8 @@ def wol():
 #Inserire la porta desiderata, si ricorda che per usare porte sotto il numero 1024 serve il root!
 run(host='192.168.x.xxx', port=xxxx) 
 #Fine script
+
+# CONTINUA
 
 Una volta salvato diamo i permessi per l'esecuzione   chmod +x wol.py
 Eseguiamo il programma e facciamo un test   python wol.py
