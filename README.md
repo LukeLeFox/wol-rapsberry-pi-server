@@ -17,6 +17,8 @@ Accediamo al nostro server (nel mio caso una Raspberry pi)
 Creiamo una cartella comoda per lavorare, io ho usato   mkdir /home/pi/wol
 Andiamo nella cartella appena creata    cd /home/pi/wol
 Creiamo il file che conterrà lo script    touch wol.py
+wget https://bottlepy.org/bottle.py
+pip install wakeonlan
 Usiamo un qualsiasi editor di testo per aprirlo (uso mousepad visot che è preinstallato)    mousepad wol.py
 Incolliamo il seguente script in python:
 
