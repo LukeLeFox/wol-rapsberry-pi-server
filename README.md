@@ -44,6 +44,13 @@ def wol():
 run(host='192.168.x.xxx', port=xxxx) 
 #Fine script
 
+Per aggiungere los cript al boot:
+
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+Aggiungere:
+@/usr/bin/python /home/pi/wol/wol.py
+
 # CONTINUA
 
 Una volta salvato diamo i permessi per l'esecuzione   chmod +x wol.py
